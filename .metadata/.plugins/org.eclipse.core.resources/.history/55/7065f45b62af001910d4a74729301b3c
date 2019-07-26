@@ -1,0 +1,14 @@
+package com.visa.prj;
+
+import org.springframework.boot.SpringApplication;
+
+@SpringBootApplication
+public class ticketResolveApp {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ticketResolveApp.class, args);
+	}
+	
+}
+
+

@@ -1,0 +1,5 @@
+package com.visa.prj.cfg;
+
+public class WebBaseConfig {
+
+}

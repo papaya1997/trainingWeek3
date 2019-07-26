@@ -1,0 +1,40 @@
+package com.visa.prj.service;
+
+
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.visa.prj.dao.TicketDao;
+import com.visa.prj.entity.Ticket;
+import com.visa.prj.entity.Employee;
+
+@Service
+public class TicketService {
+	
+	@Autowired
+	private TicketDao ticketDao;
+	
+	@Transactional
+	public void issueTicket(Ticket t) {
+		ticketDao.save(t);
+	}
+	
+	@Transactional
+	public void resolveTicket(Ticket t) {
+		Ticket tc = ticketDao.findById(t.getTicketId()).get();
+		Employee e = employeeDao.findById(t.getResolver().getEmail()).get();
+		String ed = e.getDepartment();
+		if(ed =="IT") {
+			tc.setResolver(e);
+			tc.setResolvedInfo(t.getResolvedInfo());
+			tc.setOpen(false);
+			ticketDao.save(tc);
+		}
+	}
+	
+
+}

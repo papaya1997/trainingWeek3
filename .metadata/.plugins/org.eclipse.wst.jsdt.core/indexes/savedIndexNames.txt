@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+/root/eclipse-week3/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2192722299.index
+2780155427.index
+1630720509.index
+408281668.index
+2656177947.index
+1414415521.index
+4011830119.index
